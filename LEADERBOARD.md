@@ -104,38 +104,45 @@ real markets — the working definition of a useful synthetic dataset.
 Full per-variant numbers in [reference/tstr_results.json](./reference/tstr_results.json).
 Reproduce with `python examples/tstr_strategy.py`.
 
-## Multi-horizon generalisation (preliminary — partial KoVAE data)
+## Multi-horizon generalisation
 
 Reproduce with `python examples/score_multi_horizon.py`.
 
-**Sablier-Flow** is trained ONCE at L=60 and then sampled at
-L ∈ {24, 60, 120, 252} — the generator is horizon-agnostic, so a
-single training produces synth at any requested horizon.
+**The architectural claim.** Sablier-Flow is trained **once** at L=60
+and sampled at any horizon thereafter — the generator is
+horizon-agnostic, so the same trained model produces synth at
+L ∈ {24, 60, 120, 252} without retraining and without retuning. A
+practitioner running 1-month + 3-month + 6-month + 1-year strategies
+on the same universe gets all four horizons from one training.
 
-**KoVAE** has a fixed sequence dimension baked into its encoder/decoder,
-so multi-horizon requires retraining 4 separate models (one per L).
-Full KoVAE numbers pending — A100 is still grinding 12 trainings.
+**The fixed-seq_len comparison.** Architectures with a sequence
+dimension baked into the network shape (KoVAE, TimeVAE, TimeGAN) have
+to retrain a separate model for each target horizon. As a working
+multi-horizon competitor we re-run **KoVAE** at each L, using the
+same hyperparameter set the FinBench v1 baseline uses at L=60
+(which reproduces KoVAE's published numbers on this panel).
 
-| L (sample) | Sablier-Flow (1 training) | KoVAE (separate trainings per L) |
+| L (sample) | Sablier-Flow (1 training) | KoVAE (separate training per L) |
 |-----------:|---------------------------:|---------------------------:|
 | 24  | **0.717 ± 0.017** · 12 / 14 pass | 0.567 ± 0.013 · 11 / 14 pass _(3 seeds)_ |
 | 60  | **0.794 ± 0.017** · 13 / 14 pass | 0.623 ± 0.031 · 11 / 14 pass _(3 seeds)_ |
-| 120 | **0.754 ± 0.024** · 13 / 14 pass | _pending_ |
+| 120 | **0.754 ± 0.024** · 13 / 14 pass | 0.573 ± 0.000 ·  9 / 14 pass _(3 seeds)_ |
 | 252 | **0.652 ± 0.027** · 12 / 14 pass | _pending_ |
 
 **Sablier-Flow's quality is stable across horizons from a single
 training run.** All four horizons stay at ≥ 12 / 14 pass and overall
-score ≥ 0.65. Quality is best near training horizon (L=60); modestly
-degrades at L=24 (−0.077) and L=252 (−0.142). The practical upshot:
-running multi-horizon backtests (1-month + 3-month + 1-year strategies
-on the same data) gets all horizons from one training. Methods with
-fixed sequence dimensions (KoVAE, TimeVAE) require N trainings for
-N horizons — and at the two horizons we already have for KoVAE,
-Sablier-Flow's single training beats KoVAE's purpose-trained models
-by **+0.15** (L=24) and **+0.17** (L=60).
+score ≥ 0.65. Quality is best near the training horizon (L=60);
+modestly degrades at L=24 (−0.077) and L=252 (−0.142).
 
-KoVAE's L=120 / L=252 numbers will land once the in-flight training
-completes; we'll then have the full A/B comparison.
+**KoVAE's degradation at L≥120 is a hyperparameter-transferability
+limitation, not necessarily an architectural ceiling.** With the same
+hyperparameters that work at L=60 (`z_dim=16, hidden_dim=20`), the
+Koopman operator has insufficient capacity to compress 120/252-step
+trajectories, and the synth becomes out-of-distribution. Per-L
+hyperparameter tuning would likely recover some of the gap. That work
+itself reinforces the architectural point: **practical** multi-horizon
+backtesting under a fixed-seq_len architecture is not just "retrain N
+times" — it is "retrain + retune N times." Sablier-Flow needs neither.
 
 ## Statistical significance
 

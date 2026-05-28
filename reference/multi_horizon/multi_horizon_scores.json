@@ -149,6 +149,112 @@
       ]
     },
     {
+      "method": "kovae",
+      "horizon": 120,
+      "n_seeds": 3,
+      "overall_score_mean": 0.5732142857142858,
+      "overall_score_std": 0.0,
+      "pass_rate_mean": 0.6428571428571429,
+      "pass_rate_std": 0.0,
+      "seeds": [
+        {
+          "overall_score": 0.5732142857142858,
+          "pass_rate": 0.6428571428571429,
+          "metrics": {
+            "acf_returns": 0.029205427485943736,
+            "volatility_clustering": 0.0358949348714363,
+            "leverage_effect": 0.031036288354681908,
+            "cross_correlation": 0.317241979673526,
+            "drawdown_distribution": 0.12428571428571426,
+            "marginal_ks": 0.1499702380952381,
+            "energy_distance": 0.5188233703855153,
+            "tail_quantiles": 0.9020395815472092,
+            "pearson_corr": 0.317241979673526,
+            "spearman_corr": 0.34254973380408216,
+            "copula_distance": 0.038068838799188036,
+            "tail_dependence_upper": 0.11203764377655984,
+            "tail_dependence_lower": 0.13208986953453106,
+            "correlation_breakdown": 0.30285718903664977
+          },
+          "seed": 0
+        },
+        {
+          "overall_score": 0.5732142857142858,
+          "pass_rate": 0.6428571428571429,
+          "metrics": {
+            "acf_returns": 0.028316802631019298,
+            "volatility_clustering": 0.038985570776308584,
+            "leverage_effect": 0.02967168345975923,
+            "cross_correlation": 0.31008479787577103,
+            "drawdown_distribution": 0.1357142857142857,
+            "marginal_ks": 0.1487440476190476,
+            "energy_distance": 0.5360587722073017,
+            "tail_quantiles": 0.9094167878566176,
+            "pearson_corr": 0.31008479787577103,
+            "spearman_corr": 0.33235863846024644,
+            "copula_distance": 0.03659478266336991,
+            "tail_dependence_upper": 0.10108526282417889,
+            "tail_dependence_lower": 0.12649463143929296,
+            "correlation_breakdown": 0.29740459730740154
+          },
+          "seed": 1
+        },
+        {
+          "overall_score": 0.5732142857142858,
+          "pass_rate": 0.6428571428571429,
+          "metrics": {
+            "acf_returns": 0.025054709125194325,
+            "volatility_clustering": 0.03484544124123581,
+            "leverage_effect": 0.03535784877185417,
+            "cross_correlation": 0.3175025961276048,
+            "drawdown_distribution": 0.13214285714285715,
+            "marginal_ks": 0.15164285714285713,
+            "energy_distance": 0.5258045887827757,
+            "tail_quantiles": 0.9016373769862398,
+            "pearson_corr": 0.3175025961276048,
+            "spearman_corr": 0.33851195575531506,
+            "copula_distance": 0.03735121588276566,
+            "tail_dependence_upper": 0.11664081837973446,
+            "tail_dependence_lower": 0.12915119224135418,
+            "correlation_breakdown": 0.3042176261820057
+          },
+          "seed": 2
+        }
+      ]
+    },
+    {
+      "method": "kovae",
+      "horizon": 252,
+      "n_seeds": 1,
+      "overall_score_mean": 0.5732142857142858,
+      "overall_score_std": 0.0,
+      "pass_rate_mean": 0.6428571428571429,
+      "pass_rate_std": 0.0,
+      "seeds": [
+        {
+          "overall_score": 0.5732142857142858,
+          "pass_rate": 0.6428571428571429,
+          "metrics": {
+            "acf_returns": 0.027740827459165306,
+            "volatility_clustering": 0.04714645479479584,
+            "leverage_effect": 0.036358886908785526,
+            "cross_correlation": 0.3236027375287884,
+            "drawdown_distribution": 0.18,
+            "marginal_ks": 0.15228741496598644,
+            "energy_distance": 0.45715844218839635,
+            "tail_quantiles": 0.9020195890037835,
+            "pearson_corr": 0.3236027375287884,
+            "spearman_corr": 0.32621589748156515,
+            "copula_distance": 0.035507538288190366,
+            "tail_dependence_upper": 0.11542300066477344,
+            "tail_dependence_lower": 0.12071942206902636,
+            "correlation_breakdown": 0.30234006324899143
+          },
+          "seed": 0
+        }
+      ]
+    },
+    {
       "method": "sablier_flow",
       "horizon": 24,
       "n_seeds": 5,

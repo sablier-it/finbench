@@ -1,0 +1,8 @@
+{
+  "method": "kovae",
+  "horizon": 120,
+  "seed": 1,
+  "train_seconds": 2381.5,
+  "n_paths": 200,
+  "trained_at": 120
+}
