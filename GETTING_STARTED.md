@@ -10,7 +10,7 @@ see [BENCHMARK.md](./BENCHMARK.md).
 git clone https://github.com/sablier-it/finbench
 cd finbench
 pip install sablier-flow                                 # for the panel
-pip install git+https://github.com/sablier-it/finval     # for scoring
+pip install finval                                       # for scoring
 ```
 
 ## 1. Load the panel
