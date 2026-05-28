@@ -1,0 +1,18 @@
+{
+  "method": "sablier_flow",
+  "panel": "crypto_macro_2018_2023",
+  "seed": 2,
+  "horizon": 60,
+  "n_paths": 190,
+  "wall_seconds": 42.3,
+  "target_features": [
+    "BTC",
+    "ETH",
+    "LTC",
+    "XRP",
+    "DXY",
+    "VIX",
+    "TNX"
+  ],
+  "use_calendar": false
+}
