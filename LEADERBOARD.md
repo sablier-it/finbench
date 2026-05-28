@@ -3,7 +3,7 @@
 Multivariate financial time-series generation on the
 `us_equities_macro_2010_2024` panel (IWM / QQQ / SPY / TLT / VIX /
 TNX / DXY), 2010-2019 train, 2020-2023 OOS, L=60, 200 paths,
-5 seeds. Scored with [finval](https://github.com/sablier-it/finval) v0.1.0.
+5 seeds. Scored with [finval](https://github.com/sablier-ai/finval) v0.1.0.
 
 > Lower is better for every individual metric. **Bold** = current
 > best on that metric. ✨ excellent · ✓ good · ⚪ acceptable · ❌ poor.
@@ -103,6 +103,47 @@ real markets — the working definition of a useful synthetic dataset.
 
 Full per-variant numbers in [reference/tstr_results.json](./reference/tstr_results.json).
 Reproduce with `python examples/tstr_strategy.py`.
+
+## Memorisation audit (diagnostic)
+
+Reproduce with `python examples/memorization_audit.py`.
+Full data: [`reference/memorization_audit.json`](./reference/memorization_audit.json).
+
+A model that just *copies* its training data isn't a generator —
+fitting strategies on its synth would be hidden overfitting on the
+training set. We test this with two complementary measures:
+
+1. **`syn_vs_oos_ratio`**: ratio of synth-to-train mean NN distance
+   over OOS-to-train mean NN distance. A faithful generator with
+   no memorisation should sit somewhere near the OOS baseline
+   (ratio ≈ 1.0 under stationarity; lower if the OOS regime
+   differs from train, which is our case — COVID + 2022 bear).
+2. **`dup_fraction`**: fraction of synth paths within the 5th
+   percentile of OOS-to-train distances. 5% is the chance baseline;
+   higher means more crowding near training points.
+
+| Method | syn_vs_oos ratio | Dup % | Verdict |
+|---|---:|---:|---|
+| Diffusion-TS | 0.877 | **0.0%** | HEALTHY (diverse — but combine with finval: diverse *and wrong*) |
+| Sablier-Flow | 0.684 | 13.4% | SUSPICIOUS-MILD (passes finval + TSTR; modest training proximity) |
+| TimeGAN | 0.643 |  0.1% | SUSPICIOUS-MILD (clean by dup; combine with finval failure) |
+| KoVAE | 0.542 | 44.1% | SUSPICIOUS (passes finval + TSTR but hugs training) |
+| **TimeVAE** | **0.298** | **100.0%** | **MEMORISATION** (every synth path inside 5th-pct of train; severe) |
+
+**Caveat.** Our OOS slice (2020-2023) contains regime shifts (COVID,
+2022 bear) that weren't in the train slice (2010-2019). Real OOS
+data naturally sits farther from train than a faithful-to-train
+generator's synth would. The strict ρ < 0.85 thresholds for
+"SUSPICIOUS" are therefore conservative — modest distance below
+the OOS baseline may simply reflect faithful capture of the
+training distribution, not memorisation. The 100% TimeVAE
+duplicate-fraction result is unambiguous; the 13-44% range for
+Sablier-Flow / KoVAE warrants disclosure but isn't a model-killer.
+
+**The bottom line:** among methods that pass finval + TSTR
+(Sablier-Flow and KoVAE), Sablier-Flow has the lower duplicate
+fraction (13% vs 44%). Only TimeVAE shows definitive
+memorisation under this audit.
 
 ## Submission record
 

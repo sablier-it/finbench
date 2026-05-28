@@ -1,0 +1,71 @@
+{
+  "panel": "us_equities_macro_2010_2024",
+  "horizon": 60,
+  "train_period": "2010-01-04 to 2019-12-31",
+  "oos_period": "2020-01-02 to 2023-12-28",
+  "n_train_windows": 2457,
+  "n_oos_windows": 945,
+  "metric": "Euclidean on flattened (60*7) windows",
+  "baseline": "real OOS data \u2014 d_oos_to_train is the natural reference",
+  "verdict_bands": {
+    "HEALTHY": "0.85 \u2264 ratio \u2264 1.15 \u2014 synth as close to train as fresh real data",
+    "SUSPICIOUS": "0.50 \u2264 ratio < 0.85 \u2014 synth closer to train than OOS",
+    "MEMORISATION": "ratio < 0.50 \u2014 synth much closer to train",
+    "DISTRIBUTIONAL_DRIFT": "ratio > 1.15 \u2014 synth off the manifold"
+  },
+  "d_train_self_mean": 10.113000869750977,
+  "d_oos_to_train_mean": 13.249787330627441,
+  "d_oos_to_train_p5": 6.807126522064209,
+  "methods": [
+    {
+      "method": "sablier_flow",
+      "n_seeds": 5,
+      "d_syn_mean": 9.05839557647705,
+      "d_syn_std": 0.7706952265866691,
+      "syn_vs_oos_ratio_mean": 0.6836634635925293,
+      "syn_vs_oos_ratio_std": 0.05816660356220724,
+      "duplicate_fraction": 0.134,
+      "verdict": "SUSPICIOUS"
+    },
+    {
+      "method": "kovae",
+      "n_seeds": 5,
+      "d_syn_mean": 7.178118705749512,
+      "d_syn_std": 0.14489866944268187,
+      "syn_vs_oos_ratio_mean": 0.5417535066604614,
+      "syn_vs_oos_ratio_std": 0.010935920706618396,
+      "duplicate_fraction": 0.441,
+      "verdict": "SUSPICIOUS"
+    },
+    {
+      "method": "diffusion_ts",
+      "n_seeds": 5,
+      "d_syn_mean": 11.61775894165039,
+      "d_syn_std": 0.009827808707654331,
+      "syn_vs_oos_ratio_mean": 0.8768260598182678,
+      "syn_vs_oos_ratio_std": 0.0007417360435986658,
+      "duplicate_fraction": 0.0,
+      "verdict": "HEALTHY"
+    },
+    {
+      "method": "timevae",
+      "n_seeds": 5,
+      "d_syn_mean": 3.9506343364715577,
+      "d_syn_std": 0.011459763002974473,
+      "syn_vs_oos_ratio_mean": 0.2981658637523651,
+      "syn_vs_oos_ratio_std": 0.000864897902928809,
+      "duplicate_fraction": 1.0,
+      "verdict": "MEMORISATION"
+    },
+    {
+      "method": "timegan",
+      "n_seeds": 5,
+      "d_syn_mean": 8.516534042358398,
+      "d_syn_std": 0.3667674880659169,
+      "syn_vs_oos_ratio_mean": 0.642767608165741,
+      "syn_vs_oos_ratio_std": 0.02768101962983024,
+      "duplicate_fraction": 0.001,
+      "verdict": "SUSPICIOUS"
+    }
+  ]
+}
