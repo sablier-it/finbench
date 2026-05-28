@@ -207,19 +207,57 @@ def score_method(method_dir: Path) -> dict:
     return synth_sharpes
 
 
+def score_single_method(method_dir: Path, real_sharpes: dict[str, float]) -> dict:
+    """Score one method's TSTR. Returns the dict suitable for tstr_scores.json."""
+    synth_sharpes = score_method(method_dir)
+    variant_names = list(synth_sharpes)
+    vals_real = np.array([real_sharpes[v] for v in variant_names])
+    vals_synth = np.array([synth_sharpes[v] for v in variant_names])
+    rho, p_val = spearmanr(vals_real, vals_synth)
+    sharpe_gap = float(np.mean(np.abs(vals_real - vals_synth)))
+    return {
+        "method": method_dir.name,
+        "spearman_rho": float(rho),
+        "p_value": float(p_val),
+        "mean_abs_sharpe_gap": sharpe_gap,
+        "n_strategy_variants": len(variant_names),
+        "strategy_family_version": "v1",
+        "real_sharpes": real_sharpes,
+        "synth_sharpes": synth_sharpes,
+    }
+
+
 def main() -> None:
     p = argparse.ArgumentParser()
+    p.add_argument("--method", default=None,
+                   help="single method name to score (writes reference/<name>/tstr_scores.json). "
+                        "Omit to score all methods.")
     p.add_argument("--reference_root", type=Path, default=Path("reference"))
-    p.add_argument("--out", type=Path, default=Path("tstr_results.json"))
+    p.add_argument("--out", type=Path, default=None,
+                   help="aggregate output path; defaults to reference/tstr_results.json for "
+                        "all-methods runs, or reference/<method>/tstr_scores.json for single-method")
     args = p.parse_args()
 
-    # Real reference Sharpe on the OOS sliding windows.
     print("Loading real OOS reference …")
-    real = load_real_reference_windows()
-    real_sharpes = evaluate_family(real)
+    real_sharpes = evaluate_family(load_real_reference_windows())
     print(f"  evaluated {len(real_sharpes)} strategy variants on real OOS")
 
-    # Per-method synth Sharpe → correlation.
+    if args.method is not None:
+        # Single-method mode — writes reference/<method>/tstr_scores.json
+        method_dir = args.reference_root / args.method
+        if not method_dir.exists():
+            raise SystemExit(f"no reference dir at {method_dir}")
+        out = args.out or (method_dir / "tstr_scores.json")
+        result = score_single_method(method_dir, real_sharpes)
+        # Strip the variant detail from per-method file to keep it small.
+        compact = {k: v for k, v in result.items() if k not in ("real_sharpes", "synth_sharpes")}
+        out.write_text(json.dumps(compact, indent=2))
+        print(f"\n  {args.method}: rho = {result['spearman_rho']:+.3f}  "
+              f"p = {result['p_value']:.4f}  |Δ Sharpe| = {result['mean_abs_sharpe_gap']:.3f}")
+        print(f"wrote {out}")
+        return
+
+    # All-methods mode — writes reference/tstr_results.json with full detail
     methods = ["sablier_flow", "kovae", "diffusion_ts", "timevae", "timegan"]
     rows = []
     for m in methods:
@@ -227,24 +265,19 @@ def main() -> None:
         if not method_dir.exists():
             print(f"  {m}: skipped (no reference dir)")
             continue
-        synth_sharpes = score_method(method_dir)
-        vals_real = np.array([real_sharpes[v] for v in synth_sharpes])
-        vals_synth = np.array([synth_sharpes[v] for v in synth_sharpes])
-        rho, p_val = spearmanr(vals_real, vals_synth)
-        sharpe_gap = float(np.mean(np.abs(vals_real - vals_synth)))
-        rows.append({
-            "method": m,
-            "spearman": float(rho),
-            "p_value": float(p_val),
-            "mean_abs_sharpe_gap": sharpe_gap,
-        })
-        print(f"  {m:14s}  rho = {rho:+.3f}  p = {p_val:.4f}  |Δ Sharpe| = {sharpe_gap:.3f}")
-
-    args.out.write_text(json.dumps({
+        r = score_single_method(method_dir, real_sharpes)
+        # Also persist per-method tstr_scores.json
+        compact = {k: v for k, v in r.items() if k not in ("real_sharpes", "synth_sharpes")}
+        (method_dir / "tstr_scores.json").write_text(json.dumps(compact, indent=2))
+        rows.append(compact)
+        print(f"  {m:14s}  rho = {r['spearman_rho']:+.3f}  "
+              f"p = {r['p_value']:.4f}  |Δ Sharpe| = {r['mean_abs_sharpe_gap']:.3f}")
+    out = args.out or (args.reference_root / "tstr_results.json")
+    out.write_text(json.dumps({
         "real_sharpes": real_sharpes,
         "method_rows": rows,
     }, indent=2))
-    print(f"\nwrote {args.out}")
+    print(f"\nwrote {out} + per-method tstr_scores.json files")
 
 
 if __name__ == "__main__":

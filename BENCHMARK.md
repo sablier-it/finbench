@@ -86,7 +86,76 @@ Aggregates: **overall quality** (excellent/good/acceptable/poor),
 **overall score** (0–1, higher is better), **pass rate** (fraction
 of 14 metrics that pass their domain-specific thresholds).
 
-## 5. Hyperparameters
+## 5. Required secondary metric — TSTR (train-on-synth, test-on-real)
+
+The finval metrics above test *properties* of the synthetic
+distribution. **TSTR tests a downstream consequence**: if you fit a
+trading strategy on synth and deploy it on real markets, does it
+work? This is the question that matters most for backtest-overfitting
+applications.
+
+**Submissions MUST report TSTR** alongside the finval scores. The
+strategy family is frozen for v1; reference implementation in
+[`examples/tstr_strategy.py`](./examples/tstr_strategy.py).
+
+### Strategy family (24 variants, frozen v1)
+
+Each variant operates on the 7-feature panel, dollar-neutral
+equal-weight when applicable, daily rebalanced.
+
+| Family                          | Lookbacks | Threshold (TS-MR only) | Count |
+|---------------------------------|-----------|------------------------|------:|
+| Cross-sectional momentum        | 3, 5, 10, 20 | —                   |     4 |
+| Cross-sectional mean-reversion  | 3, 5, 10, 20 | —                   |     4 |
+| Time-series momentum            | 3, 5, 10, 20 | —                   |     4 |
+| Time-series mean-reversion      | 3, 5, 10, 20 | 0.5, 1.0, 1.5       |    12 |
+
+### TSTR scoring
+
+For each strategy variant ``v`` and each method ``m``:
+
+  1. Compute Sharpe-on-real ``S_v^real`` = mean annualised Sharpe of
+     ``v`` evaluated on the OOS sliding-window reference (real data).
+  2. Compute Sharpe-on-synth ``S_v^m`` = mean annualised Sharpe of
+     ``v`` evaluated on ``m``'s synth, averaged across seeds.
+
+Then for each method, compute:
+
+  - **Spearman ρ**: rank correlation between ``{S_v^real}`` and
+    ``{S_v^m}`` across the 24 variants. Higher is better
+    (ρ = +1 means synth ranks strategies identically to real;
+    ρ = −1 means synth inverts the ranking — fitting on synth
+    picks the WORST real-market strategies).
+  - **|Δ Sharpe|**: mean absolute difference across variants.
+    Lower is better (smaller magnitude error in synth's Sharpe estimates).
+
+### Acceptance bands
+
+| ρ range                | Interpretation                                                    |
+|------------------------|-------------------------------------------------------------------|
+| ρ ≥ +0.80, p < 0.01    | **Faithful**: fitting on synth ≈ fitting on real |
+| +0.50 ≤ ρ < +0.80      | **Partial**: directionally correct but unreliable magnitudes |
+| −0.50 < ρ < +0.50      | **Weak**: synth ranks strategies essentially at random |
+| ρ ≤ −0.50, p < 0.01    | **Inverted**: synth misleads — fitting picks losing strategies |
+
+### Why NOT folded into the finval aggregate
+
+TSTR and the 14 finval metrics test different things (downstream
+utility vs distributional properties). We report both side-by-side
+on the leaderboard but deliberately do not combine them into a
+single number — there is no defensible way to weight "rank
+correlation across 24 strategies" against "Wasserstein on marginals"
+into one score. Submitters and readers may emphasise whichever
+matches their use case.
+
+### v2 strategy family
+
+The 24-variant family above is a deliberately conservative subset
+(momentum + mean-reversion only). FinBench v2 may broaden it (carry,
+vol-targeting, factor signals, multi-asset overlay). v1 TSTR
+numbers will not transfer to v2.
+
+## 6. Hyperparameters
 
 **Each method uses its own published defaults.** No per-dataset
 tuning. This is the standard practice in the TS-gen literature
@@ -113,18 +182,20 @@ Your submission directory under `reference/<method_name>/` contains:
 ```
 reference/<method_name>/
   seed_0/
-    synth_paths.npy   # (200, 60, 7) float32
-    real_paths.npy    # symlink or copy of data/real_paths.npy
-    meta.json         # see schema below
+    synth_paths.npy        # (200, 60, 7) float32
+    real_paths.npy         # symlink or copy of data/real_paths.npy
+    meta.json              # per-seed metadata; schema below
+    finval_scores.json     # per-seed finval scoring output
   seed_1/ ...
   seed_2/ ...
   seed_3/ ...
   seed_4/ ...
-  finval_scores.json  # output of examples/score.py
-  README.md           # 1-paragraph description of your method + citation
+  finval_scores.json       # aggregate across seeds; output of examples/score.py
+  tstr_scores.json         # required secondary metric; output of examples/tstr_strategy.py
+  README.md                # 1-paragraph description of your method + citation
 ```
 
-`meta.json` schema:
+Per-seed `meta.json` schema:
 
 ```json
 {
@@ -137,6 +208,19 @@ reference/<method_name>/
   "framework": "pytorch 2.7.0",
   "wall_seconds": 884.3,
   "gpu": "NVIDIA A100 SXM4 40GB"
+}
+```
+
+Aggregate `tstr_scores.json` schema:
+
+```json
+{
+  "method": "your_method_name",
+  "spearman_rho": 0.850,
+  "p_value": 0.00003,
+  "mean_abs_sharpe_gap": 0.361,
+  "n_strategy_variants": 24,
+  "strategy_family_version": "v1"
 }
 ```
 

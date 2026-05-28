@@ -31,15 +31,20 @@ Context-FID) that dominate general-purpose TS-gen benchmarks.
 
 ## At a glance
 
-| Method                  | Overall    | Score | Pass    | Vol Cluster | Leverage | Tail Q | Drawdown |
-|-------------------------|:----------:|------:|--------:|------------:|---------:|-------:|---------:|
-| **Sablier-Flow** (Sablier) | **good**   | **0.794** | **13/14** | 0.037 | **0.031** | **0.661** | 0.160 |
-| KoVAE (ICLR'24)         | acceptable | 0.616 | 10/14 | **0.031** | 0.032 | 0.979 | **0.126** |
-| Diffusion-TS (ICLR'24)  | acceptable | 0.521 | 10/14 | 0.080 | 0.055 | 38.36 | 1.000 |
-| TimeVAE (arXiv'21)      | poor       | 0.403 | 10/14 | 0.115 | 0.156 | 1.977 | 0.548 |
-| TimeGAN (NeurIPS'19)    | poor       | 0.388 |  9/14 | 0.127 | 0.111 | 1.094 | 0.369 |
+| Method                     | finval quality | finval score | finval pass | TSTR ρ | TSTR \|Δ Sharpe\| |
+|----------------------------|:--------------:|-------------:|------------:|-------:|----------------:|
+| **Sablier-Flow** (Sablier) | **good**       | **0.794**    | **13/14**   | +0.850 ✓ | **0.361**     |
+| KoVAE (ICLR'24)            | acceptable     | 0.616        | 10/14       | **+0.860** ✓ | 0.308     |
+| Diffusion-TS (ICLR'24)     | acceptable     | 0.521        | 10/14       | **−0.724** ❌ | 93.6     |
+| TimeVAE (arXiv'21)         | poor           | 0.403        | 10/14       | **−0.788** ❌ | 6.26     |
+| TimeGAN (NeurIPS'19)       | poor           | 0.388        |  9/14       | +0.535 ⚠️ | 4.91          |
 
-Full numbers (mean ± std across 5 seeds) in [LEADERBOARD.md](./LEADERBOARD.md).
+Two columns, deliberately not aggregated: finval scores
+distributional properties; TSTR scores downstream utility
+("does fitting a strategy on synth pick winners on real?").
+**Only Sablier-Flow and KoVAE pass both.** Full numbers (mean ± std
+across 5 seeds) in [LEADERBOARD.md](./LEADERBOARD.md); protocol in
+[BENCHMARK.md](./BENCHMARK.md).
 
 ## Submit your model
 

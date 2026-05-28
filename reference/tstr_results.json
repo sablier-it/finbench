@@ -28,33 +28,43 @@
   "method_rows": [
     {
       "method": "sablier_flow",
-      "spearman": 0.8504347826086956,
+      "spearman_rho": 0.8504347826086956,
       "p_value": 1.4210625789641306e-07,
-      "mean_abs_sharpe_gap": 0.36097459460926923
+      "mean_abs_sharpe_gap": 0.36097459460926923,
+      "n_strategy_variants": 24,
+      "strategy_family_version": "v1"
     },
     {
       "method": "kovae",
-      "spearman": 0.8599999999999999,
+      "spearman_rho": 0.8599999999999999,
       "p_value": 7.19741550802296e-08,
-      "mean_abs_sharpe_gap": 0.30783332068767627
+      "mean_abs_sharpe_gap": 0.30783332068767627,
+      "n_strategy_variants": 24,
+      "strategy_family_version": "v1"
     },
     {
       "method": "diffusion_ts",
-      "spearman": -0.7243478260869565,
+      "spearman_rho": -0.7243478260869565,
       "p_value": 6.273725296044193e-05,
-      "mean_abs_sharpe_gap": 93.64669407348181
+      "mean_abs_sharpe_gap": 93.64669407348181,
+      "n_strategy_variants": 24,
+      "strategy_family_version": "v1"
     },
     {
       "method": "timevae",
-      "spearman": -0.7878260869565217,
+      "spearman_rho": -0.7878260869565217,
       "p_value": 4.876128032683251e-06,
-      "mean_abs_sharpe_gap": 6.264009219111917
+      "mean_abs_sharpe_gap": 6.264009219111917,
+      "n_strategy_variants": 24,
+      "strategy_family_version": "v1"
     },
     {
       "method": "timegan",
-      "spearman": 0.5347826086956522,
+      "spearman_rho": 0.5347826086956522,
       "p_value": 0.007093267681508555,
-      "mean_abs_sharpe_gap": 4.909703601796019
+      "mean_abs_sharpe_gap": 4.909703601796019,
+      "n_strategy_variants": 24,
+      "strategy_family_version": "v1"
     }
   ]
 }

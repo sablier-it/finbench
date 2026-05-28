@@ -73,7 +73,28 @@ python examples/score.py --name your_method
 Outputs `reference/your_method/finval_scores.json` (mean ± std) and
 prints a ready-to-paste leaderboard row.
 
-## 5. Open a PR
+## 5. Required: compute TSTR score
+
+The TSTR score (train-on-synth, test-on-real) is a **required
+secondary metric** — see [BENCHMARK.md §5](./BENCHMARK.md#5-required-secondary-metric--tstr-train-on-synth-test-on-real).
+It measures whether a strategy fitted on your synth picks winners
+on real markets (Spearman ρ between Sharpe-on-real and
+Sharpe-on-synth across 24 strategy variants).
+
+```bash
+python examples/tstr_strategy.py --method your_method
+```
+
+Outputs `reference/your_method/tstr_scores.json` with:
+- `spearman_rho`: rank correlation (target: ≥ +0.80, p < 0.01)
+- `mean_abs_sharpe_gap`: Sharpe magnitude error
+
+Why required: a synth that scores well on finval can still
+misrank strategies. Diffusion-TS and TimeVAE both pass finval
+acceptably yet have negative TSTR ρ — fitting on their synth picks
+the worst real-market strategies. Without TSTR, you'd never know.
+
+## 6. Open a PR
 
 ```bash
 git checkout -b submit-your_method

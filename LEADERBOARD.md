@@ -10,13 +10,25 @@ TNX / DXY), 2010-2019 train, 2020-2023 OOS, L=60, 200 paths,
 
 ## Overall ranking
 
-| Rank | Method | Overall | Score | Pass | Notes |
-|-----:|--------|---------|------:|-----:|-------|
-| **1** | **Sablier-Flow** (Sablier, 2026) | **good** ✓ | **0.794 ± 0.017** | **13 / 14** | Designed for financial stylized facts |
-| 2 | KoVAE (Naiman et al., ICLR 2024) | acceptable ⚪ | 0.616 ± 0.024 | 10 / 14 | Koopman VAE; strong on vol clustering + drawdown |
-| 3 | Diffusion-TS (Yuan & Qiao, ICLR 2024) | acceptable ⚪ | 0.521 ± 0.000 | 10 / 14 | Diffusion; fails marginals (energy_distance, tail_quantiles) |
-| 4 | TimeVAE (Desai et al., 2021) | poor ❌ | 0.403 ± 0.014 | 10 / 14 | Mode-collapse on returns |
-| 5 | TimeGAN (Yoon et al., NeurIPS 2019) | poor ❌ | 0.388 ± 0.110 | 9 / 14 | High seed variance; fails cross-asset structure |
+Two metrics, deliberately not aggregated. **finval** measures
+distributional properties of the synth (14 stylized-fact metrics).
+**TSTR** measures downstream utility — does fitting a strategy on
+synth pick winners on real markets? See [BENCHMARK.md §5](./BENCHMARK.md#5-required-secondary-metric--tstr-train-on-synth-test-on-real)
+for the strategy family and acceptance bands.
+
+| Rank | Method | finval quality | finval score | finval pass | TSTR ρ | TSTR \|Δ Sharpe\| |
+|-----:|--------|----------------|-------------:|------------:|-------:|----------------:|
+| **1** | **Sablier-Flow** (Sablier, 2026) | **good** ✓ | **0.794 ± 0.017** | **13 / 14** | **+0.850** ✓ | **0.361** |
+| 2 | KoVAE (Naiman et al., ICLR 2024) | acceptable ⚪ | 0.616 ± 0.024 | 10 / 14 | **+0.860** ✓ | 0.308 |
+| 3 | Diffusion-TS (Yuan & Qiao, ICLR 2024) | acceptable ⚪ | 0.521 ± 0.000 | 10 / 14 | **−0.724** ❌ | 93.6 |
+| 4 | TimeVAE (Desai et al., 2021) | poor ❌ | 0.403 ± 0.014 | 10 / 14 | **−0.788** ❌ | 6.26 |
+| 5 | TimeGAN (Yoon et al., NeurIPS 2019) | poor ❌ | 0.388 ± 0.110 | 9 / 14 | +0.535 ⚠️ | 4.91 |
+
+**Rank reasoning:** Sablier-Flow leads on finval; KoVAE edges
+Sablier-Flow on TSTR (statistical tie within seed variance at
+ρ = 0.85 vs 0.86); both fail TSTR on Diffusion-TS and TimeVAE
+(inverted Spearman — fitting on their synth picks losing
+strategies). Top-2 vs the rest is the meaningful gap.
 
 ## Per-metric breakdown (mean ± std across 5 seeds, lower = better)
 
