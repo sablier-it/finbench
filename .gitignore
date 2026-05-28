@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Don't ignore reference results — those are the leaderboard
+# !reference/*/seed_*/synth_paths.npy
+# !reference/*/seed_*/real_paths.npy
+
+# Local working directories
+local/
+scratch/

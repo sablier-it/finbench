@@ -1,0 +1,22 @@
+{
+  "method": "timevae",
+  "seed": 4,
+  "paper": null,
+  "code": null,
+  "framework": "TODO",
+  "gpu": "timevae-eval",
+  "wall_seconds": null,
+  "hyperparameters_tuned": false,
+  "horizon": 60,
+  "n_paths": 200,
+  "feature_order": [
+    "IWM",
+    "QQQ",
+    "SPY",
+    "TLT",
+    "VIX",
+    "TNX",
+    "DXY"
+  ],
+  "panel": "us_equities_macro_2010_2024"
+}
