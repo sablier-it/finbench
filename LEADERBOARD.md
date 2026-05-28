@@ -127,7 +127,7 @@ same hyperparameter set the FinBench v1 baseline uses at L=60
 | 24  | **0.717 ± 0.017** · 12 / 14 pass | 0.567 ± 0.013 · 11 / 14 pass _(3 seeds)_ |
 | 60  | **0.794 ± 0.017** · 13 / 14 pass | 0.623 ± 0.031 · 11 / 14 pass _(3 seeds)_ |
 | 120 | **0.754 ± 0.024** · 13 / 14 pass | 0.573 ± 0.000 ·  9 / 14 pass _(3 seeds)_ |
-| 252 | **0.652 ± 0.027** · 12 / 14 pass | _pending_ |
+| 252 | **0.652 ± 0.027** · 12 / 14 pass | 0.573 ± 0.000 ·  9 / 14 pass _(3 seeds)_ |
 
 **Sablier-Flow's quality is stable across horizons from a single
 training run.** All four horizons stay at ≥ 12 / 14 pass and overall

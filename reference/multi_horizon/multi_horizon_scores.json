@@ -225,7 +225,7 @@
     {
       "method": "kovae",
       "horizon": 252,
-      "n_seeds": 1,
+      "n_seeds": 3,
       "overall_score_mean": 0.5732142857142858,
       "overall_score_std": 0.0,
       "pass_rate_mean": 0.6428571428571429,
@@ -251,6 +251,48 @@
             "correlation_breakdown": 0.30234006324899143
           },
           "seed": 0
+        },
+        {
+          "overall_score": 0.5732142857142858,
+          "pass_rate": 0.6428571428571429,
+          "metrics": {
+            "acf_returns": 0.03080222215196721,
+            "volatility_clustering": 0.04667856705201823,
+            "leverage_effect": 0.03292713785629126,
+            "cross_correlation": 0.32946841897087686,
+            "drawdown_distribution": 0.16142857142857142,
+            "marginal_ks": 0.14972789115646257,
+            "energy_distance": 0.47057072897925123,
+            "tail_quantiles": 0.9231751212127671,
+            "pearson_corr": 0.32946841897087686,
+            "spearman_corr": 0.33193492968739996,
+            "copula_distance": 0.036000910266715244,
+            "tail_dependence_upper": 0.10981256115988443,
+            "tail_dependence_lower": 0.11837626258300972,
+            "correlation_breakdown": 0.3144750730338868
+          },
+          "seed": 1
+        },
+        {
+          "overall_score": 0.5732142857142858,
+          "pass_rate": 0.6428571428571429,
+          "metrics": {
+            "acf_returns": 0.028186426717820075,
+            "volatility_clustering": 0.049945530243609745,
+            "leverage_effect": 0.036468762055322686,
+            "cross_correlation": 0.33477634146248963,
+            "drawdown_distribution": 0.18285714285714286,
+            "marginal_ks": 0.14736961451247166,
+            "energy_distance": 0.5019834090046759,
+            "tail_quantiles": 0.9133864196777469,
+            "pearson_corr": 0.33477634146248963,
+            "spearman_corr": 0.3409434014998024,
+            "copula_distance": 0.03701850993427817,
+            "tail_dependence_upper": 0.11098414090289274,
+            "tail_dependence_lower": 0.11954784232601805,
+            "correlation_breakdown": 0.31586006425267965
+          },
+          "seed": 2
         }
       ]
     },
