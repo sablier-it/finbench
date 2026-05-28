@@ -1,0 +1,8 @@
+{
+  "method": "kovae",
+  "panel": "crypto_macro_2018_2023",
+  "seed": 0,
+  "horizon": 60,
+  "n_paths": 190,
+  "train_seconds": 675.5
+}
