@@ -104,6 +104,39 @@ real markets — the working definition of a useful synthetic dataset.
 Full per-variant numbers in [reference/tstr_results.json](./reference/tstr_results.json).
 Reproduce with `python examples/tstr_strategy.py`.
 
+## Multi-horizon generalisation (preliminary — partial KoVAE data)
+
+Reproduce with `python examples/score_multi_horizon.py`.
+
+**Sablier-Flow** is trained ONCE at L=60 and then sampled at
+L ∈ {24, 60, 120, 252} — the generator is horizon-agnostic, so a
+single training produces synth at any requested horizon.
+
+**KoVAE** has a fixed sequence dimension baked into its encoder/decoder,
+so multi-horizon requires retraining 4 separate models (one per L).
+Full KoVAE numbers pending — A100 is still grinding 12 trainings.
+
+| L (sample) | Sablier-Flow (1 training) | KoVAE (separate trainings per L) |
+|-----------:|---------------------------:|---------------------------:|
+| 24  | **0.717 ± 0.017** · 12 / 14 pass | 0.567 ± 0.013 · 11 / 14 pass _(3 seeds)_ |
+| 60  | **0.794 ± 0.017** · 13 / 14 pass | 0.623 ± 0.031 · 11 / 14 pass _(3 seeds)_ |
+| 120 | **0.754 ± 0.024** · 13 / 14 pass | _pending_ |
+| 252 | **0.652 ± 0.027** · 12 / 14 pass | _pending_ |
+
+**Sablier-Flow's quality is stable across horizons from a single
+training run.** All four horizons stay at ≥ 12 / 14 pass and overall
+score ≥ 0.65. Quality is best near training horizon (L=60); modestly
+degrades at L=24 (−0.077) and L=252 (−0.142). The practical upshot:
+running multi-horizon backtests (1-month + 3-month + 1-year strategies
+on the same data) gets all horizons from one training. Methods with
+fixed sequence dimensions (KoVAE, TimeVAE) require N trainings for
+N horizons — and at the two horizons we already have for KoVAE,
+Sablier-Flow's single training beats KoVAE's purpose-trained models
+by **+0.15** (L=24) and **+0.17** (L=60).
+
+KoVAE's L=120 / L=252 numbers will land once the in-flight training
+completes; we'll then have the full A/B comparison.
+
 ## Statistical significance
 
 Reproduce with `python examples/statistical_tests.py`.

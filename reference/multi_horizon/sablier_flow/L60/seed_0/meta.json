@@ -1,0 +1,9 @@
+{
+  "method": "sablier_flow",
+  "horizon": 60,
+  "seed": 0,
+  "train_seconds": 148.1,
+  "sample_seconds": 1.6,
+  "n_paths": 200,
+  "trained_at": 60
+}
