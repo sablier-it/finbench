@@ -62,7 +62,7 @@ scoring is deterministic.
 
 ## 4. Metrics
 
-All 14 metrics come from [finval](https://github.com/sablier-it/finval) v0.1.0
+All 14 metrics come from [finval](https://github.com/sablier-ai/finval) v0.1.0
 via `finval.validate_paths(synth, real)`. Lower is better for all.
 
 | Group       | Metric                  | What it measures                                   |

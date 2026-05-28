@@ -26,7 +26,7 @@ Context-FID) that dominate general-purpose TS-gen benchmarks.
 - [Leaderboard](./LEADERBOARD.md) — current rankings
 - [Benchmark protocol](./BENCHMARK.md) — frozen v1 spec
 - [Submit your model](./examples/submit.py) — 10-line template
-- [finval (scoring library)](https://github.com/sablier-it/finval) — the
+- [finval (scoring library)](https://github.com/sablier-ai/finval) — the
   metric implementations FinBench uses
 
 ## At a glance

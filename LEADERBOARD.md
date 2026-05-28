@@ -104,6 +104,50 @@ real markets — the working definition of a useful synthetic dataset.
 Full per-variant numbers in [reference/tstr_results.json](./reference/tstr_results.json).
 Reproduce with `python examples/tstr_strategy.py`.
 
+## Statistical significance
+
+Reproduce with `python examples/statistical_tests.py`.
+Full data: [`reference/statistical_tests.json`](./reference/statistical_tests.json).
+
+We use **paired t-tests** across the 5 seeds rather than Wilcoxon
+signed-rank. With n=5 paired samples, Wilcoxon's smallest achievable
+two-sided p-value is 0.0625 (1 / 2⁴) — the statistic *cannot* declare
+significance at p<0.05 regardless of effect size. Paired t-test (with
+continuous, approximately-normal finval scores across seeds) gives us
+the power 5 seeds can support.
+
+### Per-metric significance — Sablier-Flow vs each baseline
+
+| Sablier-Flow vs | Metrics where SF lower-is-better wins | Metrics where the win is significant at p<0.05 |
+|---|---:|---:|
+| KoVAE        | 11 / 14 | **11 / 14** |
+| Diffusion-TS | 14 / 14 | **13 / 14** |
+| TimeVAE      | 14 / 14 | **14 / 14** |
+| TimeGAN      | 14 / 14 | **13 / 14** |
+
+Sablier-Flow's finval advantage is **statistically significant on
+the overwhelming majority of metrics**, even at our conservative
+n=5 seeds. The single non-significant Sablier-Flow-vs-KoVAE rows are
+`acf_returns` (tie) and `volatility_clustering` / `drawdown_distribution`
+(KoVAE wins these by small margins on point estimates).
+
+### TSTR — bootstrap 95% CIs on Spearman ρ
+
+10000 resamples of the 24 strategy variants.
+
+| Method | ρ point | 95% CI |
+|---|---:|---:|
+| Sablier-Flow | +0.850 | [+0.640, +0.939] |
+| KoVAE        | +0.860 | [+0.656, +0.946] |
+| TimeGAN      | +0.535 | [+0.091, +0.751] |
+| Diffusion-TS | **−0.724** | **[−0.871, −0.414]** |
+| TimeVAE      | **−0.788** | **[−0.905, −0.553]** |
+
+**Diffusion-TS and TimeVAE's CIs are entirely below zero** — their
+inverted-ranking verdict is statistically robust, not a single-run
+fluke. Sablier-Flow's CI overlaps KoVAE's (statistical tie on TSTR);
+both CIs lie almost entirely above the +0.5 threshold.
+
 ## Memorisation audit (diagnostic)
 
 Reproduce with `python examples/memorization_audit.py`.

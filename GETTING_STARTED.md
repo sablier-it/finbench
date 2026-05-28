@@ -7,7 +7,7 @@ see [BENCHMARK.md](./BENCHMARK.md).
 ## Setup (one time)
 
 ```bash
-git clone https://github.com/sablier-it/finbench
+git clone https://github.com/sablier-ai/finbench
 cd finbench
 pip install sablier-flow                                 # for the panel
 pip install finval                                       # for scoring
