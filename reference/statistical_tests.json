@@ -1,0 +1,1323 @@
+{
+  "wilcoxon_per_metric": [
+    {
+      "metric": "acf_returns",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.024079337308937222,
+      "mean_b": 0.023569922445940618,
+      "p_value": 0.566500388926434,
+      "significant_at_05": false
+    },
+    {
+      "metric": "acf_returns",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.024079337308937222,
+      "mean_b": 0.03152610441389998,
+      "p_value": 0.0005158283422728984,
+      "significant_at_05": true
+    },
+    {
+      "metric": "acf_returns",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.024079337308937222,
+      "mean_b": 0.10190908798908198,
+      "p_value": 5.9580703511200666e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "acf_returns",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.024079337308937222,
+      "mean_b": 0.1455439515233536,
+      "p_value": 0.006841157616097585,
+      "significant_at_05": true
+    },
+    {
+      "metric": "acf_returns",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.023569922445940618,
+      "mean_b": 0.03152610441389998,
+      "p_value": 0.0036171127550872753,
+      "significant_at_05": true
+    },
+    {
+      "metric": "acf_returns",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.023569922445940618,
+      "mean_b": 0.10190908798908198,
+      "p_value": 6.7347969790812e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "acf_returns",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.023569922445940618,
+      "mean_b": 0.1455439515233536,
+      "p_value": 0.006497948605282579,
+      "significant_at_05": true
+    },
+    {
+      "metric": "acf_returns",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 0.03152610441389998,
+      "mean_b": 0.10190908798908198,
+      "p_value": 0.0001258715102428621,
+      "significant_at_05": true
+    },
+    {
+      "metric": "acf_returns",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 0.03152610441389998,
+      "mean_b": 0.1455439515233536,
+      "p_value": 0.009500636084163511,
+      "significant_at_05": true
+    },
+    {
+      "metric": "acf_returns",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 0.10190908798908198,
+      "mean_b": 0.1455439515233536,
+      "p_value": 0.11734677193869725,
+      "significant_at_05": false
+    },
+    {
+      "metric": "copula_distance",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.018694547114841344,
+      "mean_b": 0.03772028172545615,
+      "p_value": 1.3373480130500125e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "copula_distance",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.018694547114841344,
+      "mean_b": 0.01960340578010497,
+      "p_value": 0.07596839290009025,
+      "significant_at_05": false
+    },
+    {
+      "metric": "copula_distance",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.018694547114841344,
+      "mean_b": 0.024936644375639687,
+      "p_value": 0.0003551026340341587,
+      "significant_at_05": true
+    },
+    {
+      "metric": "copula_distance",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.018694547114841344,
+      "mean_b": 0.05837523518973675,
+      "p_value": 0.0034301755561359656,
+      "significant_at_05": true
+    },
+    {
+      "metric": "copula_distance",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.03772028172545615,
+      "mean_b": 0.01960340578010497,
+      "p_value": 1.3024499857166959e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "copula_distance",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.03772028172545615,
+      "mean_b": 0.024936644375639687,
+      "p_value": 4.6752483564249585e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "copula_distance",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.03772028172545615,
+      "mean_b": 0.05837523518973675,
+      "p_value": 0.036411771856099714,
+      "significant_at_05": true
+    },
+    {
+      "metric": "copula_distance",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 0.01960340578010497,
+      "mean_b": 0.024936644375639687,
+      "p_value": 0.0027142412527865756,
+      "significant_at_05": true
+    },
+    {
+      "metric": "copula_distance",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 0.01960340578010497,
+      "mean_b": 0.05837523518973675,
+      "p_value": 0.0042037033815918905,
+      "significant_at_05": true
+    },
+    {
+      "metric": "copula_distance",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 0.024936644375639687,
+      "mean_b": 0.05837523518973675,
+      "p_value": 0.007116970298617549,
+      "significant_at_05": true
+    },
+    {
+      "metric": "correlation_breakdown",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.14021871088766008,
+      "mean_b": 0.2984569556410394,
+      "p_value": 4.0047289652412256e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "correlation_breakdown",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.14021871088766008,
+      "mean_b": 0.30333231545230144,
+      "p_value": 3.729376902611087e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "correlation_breakdown",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.14021871088766008,
+      "mean_b": 0.2790401376262608,
+      "p_value": 0.0001686549580338169,
+      "significant_at_05": true
+    },
+    {
+      "metric": "correlation_breakdown",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.14021871088766008,
+      "mean_b": 0.5015358249599734,
+      "p_value": 0.006180133820106725,
+      "significant_at_05": true
+    },
+    {
+      "metric": "correlation_breakdown",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.2984569556410394,
+      "mean_b": 0.30333231545230144,
+      "p_value": 0.7187196104050031,
+      "significant_at_05": false
+    },
+    {
+      "metric": "correlation_breakdown",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.2984569556410394,
+      "mean_b": 0.2790401376262608,
+      "p_value": 0.32836948539140587,
+      "significant_at_05": false
+    },
+    {
+      "metric": "correlation_breakdown",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.2984569556410394,
+      "mean_b": 0.5015358249599734,
+      "p_value": 0.04502545168402894,
+      "significant_at_05": true
+    },
+    {
+      "metric": "correlation_breakdown",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 0.30333231545230144,
+      "mean_b": 0.2790401376262608,
+      "p_value": 0.12363333290236743,
+      "significant_at_05": false
+    },
+    {
+      "metric": "correlation_breakdown",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 0.30333231545230144,
+      "mean_b": 0.5015358249599734,
+      "p_value": 0.05427202375475333,
+      "significant_at_05": false
+    },
+    {
+      "metric": "correlation_breakdown",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 0.2790401376262608,
+      "mean_b": 0.5015358249599734,
+      "p_value": 0.026896755848907442,
+      "significant_at_05": true
+    },
+    {
+      "metric": "cross_correlation",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.14612968423729863,
+      "mean_b": 0.3076667128718727,
+      "p_value": 2.911495579726894e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "cross_correlation",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.14612968423729863,
+      "mean_b": 0.1751241496297032,
+      "p_value": 0.003949582777611454,
+      "significant_at_05": true
+    },
+    {
+      "metric": "cross_correlation",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.14612968423729863,
+      "mean_b": 0.23337657491774175,
+      "p_value": 0.0003855485740245076,
+      "significant_at_05": true
+    },
+    {
+      "metric": "cross_correlation",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.14612968423729863,
+      "mean_b": 0.4866550257407261,
+      "p_value": 0.010993478724867965,
+      "significant_at_05": true
+    },
+    {
+      "metric": "cross_correlation",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.3076667128718727,
+      "mean_b": 0.1751241496297032,
+      "p_value": 5.799952565528258e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "cross_correlation",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.3076667128718727,
+      "mean_b": 0.23337657491774175,
+      "p_value": 0.00314683101720128,
+      "significant_at_05": true
+    },
+    {
+      "metric": "cross_correlation",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.3076667128718727,
+      "mean_b": 0.4866550257407261,
+      "p_value": 0.07946554444854172,
+      "significant_at_05": false
+    },
+    {
+      "metric": "cross_correlation",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 0.1751241496297032,
+      "mean_b": 0.23337657491774175,
+      "p_value": 0.009130980977876312,
+      "significant_at_05": true
+    },
+    {
+      "metric": "cross_correlation",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 0.1751241496297032,
+      "mean_b": 0.4866550257407261,
+      "p_value": 0.016268404438193777,
+      "significant_at_05": true
+    },
+    {
+      "metric": "cross_correlation",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 0.23337657491774175,
+      "mean_b": 0.4866550257407261,
+      "p_value": 0.03018327229313924,
+      "significant_at_05": true
+    },
+    {
+      "metric": "drawdown_distribution",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.15957142857142856,
+      "mean_b": 0.12600000000000003,
+      "p_value": 0.11976491987522657,
+      "significant_at_05": false
+    },
+    {
+      "metric": "drawdown_distribution",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.15957142857142856,
+      "mean_b": 1.0,
+      "p_value": 7.502233560637457e-08,
+      "significant_at_05": true
+    },
+    {
+      "metric": "drawdown_distribution",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.15957142857142856,
+      "mean_b": 0.5478571428571428,
+      "p_value": 0.00029721496012486906,
+      "significant_at_05": true
+    },
+    {
+      "metric": "drawdown_distribution",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.15957142857142856,
+      "mean_b": 0.3685714285714286,
+      "p_value": 0.0027667140672649965,
+      "significant_at_05": true
+    },
+    {
+      "metric": "drawdown_distribution",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.12600000000000003,
+      "mean_b": 1.0,
+      "p_value": 8.196506133792343e-08,
+      "significant_at_05": true
+    },
+    {
+      "metric": "drawdown_distribution",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.12600000000000003,
+      "mean_b": 0.5478571428571428,
+      "p_value": 2.0721642389075423e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "drawdown_distribution",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.12600000000000003,
+      "mean_b": 0.3685714285714286,
+      "p_value": 0.006082643744636798,
+      "significant_at_05": true
+    },
+    {
+      "metric": "drawdown_distribution",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 1.0,
+      "mean_b": 0.5478571428571428,
+      "p_value": 5.4414668822082526e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "drawdown_distribution",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 1.0,
+      "mean_b": 0.3685714285714286,
+      "p_value": 6.670188278602108e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "drawdown_distribution",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 0.5478571428571428,
+      "mean_b": 0.3685714285714286,
+      "p_value": 0.0390496698986663,
+      "significant_at_05": true
+    },
+    {
+      "metric": "energy_distance",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.21232623153357882,
+      "mean_b": 0.37641917781844947,
+      "p_value": 0.012845791855455348,
+      "significant_at_05": true
+    },
+    {
+      "metric": "energy_distance",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.21232623153357882,
+      "mean_b": 4.388384389179729,
+      "p_value": 4.5929749663081066e-08,
+      "significant_at_05": true
+    },
+    {
+      "metric": "energy_distance",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.21232623153357882,
+      "mean_b": 1.4429226117192342,
+      "p_value": 4.664380270976437e-06,
+      "significant_at_05": true
+    },
+    {
+      "metric": "energy_distance",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.21232623153357882,
+      "mean_b": 0.27745231773687024,
+      "p_value": 0.1758165203676398,
+      "significant_at_05": false
+    },
+    {
+      "metric": "energy_distance",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.37641917781844947,
+      "mean_b": 4.388384389179729,
+      "p_value": 8.054447506823665e-10,
+      "significant_at_05": true
+    },
+    {
+      "metric": "energy_distance",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.37641917781844947,
+      "mean_b": 1.4429226117192342,
+      "p_value": 2.0137636637250833e-07,
+      "significant_at_05": true
+    },
+    {
+      "metric": "energy_distance",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.37641917781844947,
+      "mean_b": 0.27745231773687024,
+      "p_value": 0.02251253267685845,
+      "significant_at_05": true
+    },
+    {
+      "metric": "energy_distance",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 4.388384389179729,
+      "mean_b": 1.4429226117192342,
+      "p_value": 7.107830692506284e-10,
+      "significant_at_05": true
+    },
+    {
+      "metric": "energy_distance",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 4.388384389179729,
+      "mean_b": 0.27745231773687024,
+      "p_value": 2.7593407932685042e-09,
+      "significant_at_05": true
+    },
+    {
+      "metric": "energy_distance",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 1.4429226117192342,
+      "mean_b": 0.27745231773687024,
+      "p_value": 1.7293102506781812e-06,
+      "significant_at_05": true
+    },
+    {
+      "metric": "leverage_effect",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.030529761293935264,
+      "mean_b": 0.032461244745513054,
+      "p_value": 0.11994899457660699,
+      "significant_at_05": false
+    },
+    {
+      "metric": "leverage_effect",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.030529761293935264,
+      "mean_b": 0.05463690417360182,
+      "p_value": 2.667480074263831e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "leverage_effect",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.030529761293935264,
+      "mean_b": 0.15593083806832386,
+      "p_value": 5.6539435343080956e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "leverage_effect",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.030529761293935264,
+      "mean_b": 0.11137228278944786,
+      "p_value": 0.013384703086425104,
+      "significant_at_05": true
+    },
+    {
+      "metric": "leverage_effect",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.032461244745513054,
+      "mean_b": 0.05463690417360182,
+      "p_value": 3.3063642172328394e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "leverage_effect",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.032461244745513054,
+      "mean_b": 0.15593083806832386,
+      "p_value": 8.210666883968725e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "leverage_effect",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.032461244745513054,
+      "mean_b": 0.11137228278944786,
+      "p_value": 0.012520691094600852,
+      "significant_at_05": true
+    },
+    {
+      "metric": "leverage_effect",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 0.05463690417360182,
+      "mean_b": 0.15593083806832386,
+      "p_value": 0.00011975275109727811,
+      "significant_at_05": true
+    },
+    {
+      "metric": "leverage_effect",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 0.05463690417360182,
+      "mean_b": 0.11137228278944786,
+      "p_value": 0.04048214251892435,
+      "significant_at_05": true
+    },
+    {
+      "metric": "leverage_effect",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 0.15593083806832386,
+      "mean_b": 0.11137228278944786,
+      "p_value": 0.13002896041493445,
+      "significant_at_05": false
+    },
+    {
+      "metric": "marginal_ks",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.09442380952380952,
+      "mean_b": 0.14619285714285715,
+      "p_value": 0.0007620031199845517,
+      "significant_at_05": true
+    },
+    {
+      "metric": "marginal_ks",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.09442380952380952,
+      "mean_b": 0.949454761904762,
+      "p_value": 1.9625028222175982e-08,
+      "significant_at_05": true
+    },
+    {
+      "metric": "marginal_ks",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.09442380952380952,
+      "mean_b": 0.47453095238095233,
+      "p_value": 4.427956320688502e-07,
+      "significant_at_05": true
+    },
+    {
+      "metric": "marginal_ks",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.09442380952380952,
+      "mean_b": 0.1488,
+      "p_value": 0.010006081602468287,
+      "significant_at_05": true
+    },
+    {
+      "metric": "marginal_ks",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.14619285714285715,
+      "mean_b": 0.949454761904762,
+      "p_value": 1.1197276748219367e-11,
+      "significant_at_05": true
+    },
+    {
+      "metric": "marginal_ks",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.14619285714285715,
+      "mean_b": 0.47453095238095233,
+      "p_value": 8.048639961406197e-10,
+      "significant_at_05": true
+    },
+    {
+      "metric": "marginal_ks",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.14619285714285715,
+      "mean_b": 0.1488,
+      "p_value": 0.7954532682268866,
+      "significant_at_05": false
+    },
+    {
+      "metric": "marginal_ks",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 0.949454761904762,
+      "mean_b": 0.47453095238095233,
+      "p_value": 7.728283627993029e-11,
+      "significant_at_05": true
+    },
+    {
+      "metric": "marginal_ks",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 0.949454761904762,
+      "mean_b": 0.1488,
+      "p_value": 1.0402770628014908e-07,
+      "significant_at_05": true
+    },
+    {
+      "metric": "marginal_ks",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 0.47453095238095233,
+      "mean_b": 0.1488,
+      "p_value": 4.549698067014897e-06,
+      "significant_at_05": true
+    },
+    {
+      "metric": "pearson_corr",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.14612968423729863,
+      "mean_b": 0.3076667128718727,
+      "p_value": 2.911495579726894e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "pearson_corr",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.14612968423729863,
+      "mean_b": 0.1751241496297032,
+      "p_value": 0.003949582777611454,
+      "significant_at_05": true
+    },
+    {
+      "metric": "pearson_corr",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.14612968423729863,
+      "mean_b": 0.23337657491774175,
+      "p_value": 0.0003855485740245076,
+      "significant_at_05": true
+    },
+    {
+      "metric": "pearson_corr",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.14612968423729863,
+      "mean_b": 0.4866550257407261,
+      "p_value": 0.010993478724867965,
+      "significant_at_05": true
+    },
+    {
+      "metric": "pearson_corr",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.3076667128718727,
+      "mean_b": 0.1751241496297032,
+      "p_value": 5.799952565528258e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "pearson_corr",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.3076667128718727,
+      "mean_b": 0.23337657491774175,
+      "p_value": 0.00314683101720128,
+      "significant_at_05": true
+    },
+    {
+      "metric": "pearson_corr",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.3076667128718727,
+      "mean_b": 0.4866550257407261,
+      "p_value": 0.07946554444854172,
+      "significant_at_05": false
+    },
+    {
+      "metric": "pearson_corr",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 0.1751241496297032,
+      "mean_b": 0.23337657491774175,
+      "p_value": 0.009130980977876312,
+      "significant_at_05": true
+    },
+    {
+      "metric": "pearson_corr",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 0.1751241496297032,
+      "mean_b": 0.4866550257407261,
+      "p_value": 0.016268404438193777,
+      "significant_at_05": true
+    },
+    {
+      "metric": "pearson_corr",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 0.23337657491774175,
+      "mean_b": 0.4866550257407261,
+      "p_value": 0.03018327229313924,
+      "significant_at_05": true
+    },
+    {
+      "metric": "spearman_corr",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.1623845233211542,
+      "mean_b": 0.3394793694296223,
+      "p_value": 1.8204156180206833e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "spearman_corr",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.1623845233211542,
+      "mean_b": 0.179394104268326,
+      "p_value": 0.008923803608895754,
+      "significant_at_05": true
+    },
+    {
+      "metric": "spearman_corr",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.1623845233211542,
+      "mean_b": 0.2141208038996761,
+      "p_value": 0.002896174691422146,
+      "significant_at_05": true
+    },
+    {
+      "metric": "spearman_corr",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.1623845233211542,
+      "mean_b": 0.47978604291745147,
+      "p_value": 0.011333326391153862,
+      "significant_at_05": true
+    },
+    {
+      "metric": "spearman_corr",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.3394793694296223,
+      "mean_b": 0.179394104268326,
+      "p_value": 2.2495317288175995e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "spearman_corr",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.3394793694296223,
+      "mean_b": 0.2141208038996761,
+      "p_value": 0.00012431223756409024,
+      "significant_at_05": true
+    },
+    {
+      "metric": "spearman_corr",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.3394793694296223,
+      "mean_b": 0.47978604291745147,
+      "p_value": 0.13024446720394134,
+      "significant_at_05": false
+    },
+    {
+      "metric": "spearman_corr",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 0.179394104268326,
+      "mean_b": 0.2141208038996761,
+      "p_value": 0.027226142743657936,
+      "significant_at_05": true
+    },
+    {
+      "metric": "spearman_corr",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 0.179394104268326,
+      "mean_b": 0.47978604291745147,
+      "p_value": 0.014764197800263076,
+      "significant_at_05": true
+    },
+    {
+      "metric": "spearman_corr",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 0.2141208038996761,
+      "mean_b": 0.47978604291745147,
+      "p_value": 0.023405465577213992,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_lower",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.06248180548857565,
+      "mean_b": 0.13291101650853382,
+      "p_value": 1.128689383085049e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_lower",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.06248180548857565,
+      "mean_b": 0.09288543015458924,
+      "p_value": 0.0005972706493956176,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_lower",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.06248180548857565,
+      "mean_b": 0.09862384212814508,
+      "p_value": 0.0061163223956262605,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_lower",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.06248180548857565,
+      "mean_b": 0.1532290166052602,
+      "p_value": 0.032789315161805596,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_lower",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.13291101650853382,
+      "mean_b": 0.09288543015458924,
+      "p_value": 0.00026759338449850985,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_lower",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.13291101650853382,
+      "mean_b": 0.09862384212814508,
+      "p_value": 0.014188469102473896,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_lower",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.13291101650853382,
+      "mean_b": 0.1532290166052602,
+      "p_value": 0.5034070426039159,
+      "significant_at_05": false
+    },
+    {
+      "metric": "tail_dependence_lower",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 0.09288543015458924,
+      "mean_b": 0.09862384212814508,
+      "p_value": 0.4547263540342999,
+      "significant_at_05": false
+    },
+    {
+      "metric": "tail_dependence_lower",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 0.09288543015458924,
+      "mean_b": 0.1532290166052602,
+      "p_value": 0.1121455770350917,
+      "significant_at_05": false
+    },
+    {
+      "metric": "tail_dependence_lower",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 0.09862384212814508,
+      "mean_b": 0.1532290166052602,
+      "p_value": 0.11038404068457089,
+      "significant_at_05": false
+    },
+    {
+      "metric": "tail_dependence_upper",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.046058862592059505,
+      "mean_b": 0.12069027399053067,
+      "p_value": 1.9833871140367048e-05,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_upper",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.046058862592059505,
+      "mean_b": 0.07136658866355709,
+      "p_value": 0.0009997238879314893,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_upper",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.046058862592059505,
+      "mean_b": 0.09133213069506319,
+      "p_value": 0.00046220987818631234,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_upper",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.046058862592059505,
+      "mean_b": 0.17409391776391075,
+      "p_value": 0.012483514190218802,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_upper",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.12069027399053067,
+      "mean_b": 0.07136658866355709,
+      "p_value": 0.00015317657755480122,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_upper",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.12069027399053067,
+      "mean_b": 0.09133213069506319,
+      "p_value": 0.0016748651916241827,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_upper",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.12069027399053067,
+      "mean_b": 0.17409391776391075,
+      "p_value": 0.12279695353428358,
+      "significant_at_05": false
+    },
+    {
+      "metric": "tail_dependence_upper",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 0.07136658866355709,
+      "mean_b": 0.09133213069506319,
+      "p_value": 0.0005381534709207864,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_upper",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 0.07136658866355709,
+      "mean_b": 0.17409391776391075,
+      "p_value": 0.027380227612748123,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_dependence_upper",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 0.09133213069506319,
+      "mean_b": 0.17409391776391075,
+      "p_value": 0.04879461798345526,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_quantiles",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.661255101056619,
+      "mean_b": 0.9789020977647604,
+      "p_value": 0.0014879302598807974,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_quantiles",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.661255101056619,
+      "mean_b": 38.35844742215692,
+      "p_value": 9.365515828449202e-11,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_quantiles",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.661255101056619,
+      "mean_b": 1.9770842546209402,
+      "p_value": 7.39970086502277e-06,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_quantiles",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.661255101056619,
+      "mean_b": 1.0942974500097653,
+      "p_value": 0.0010626492684451545,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_quantiles",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.9789020977647604,
+      "mean_b": 38.35844742215692,
+      "p_value": 5.3227353124561935e-12,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_quantiles",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.9789020977647604,
+      "mean_b": 1.9770842546209402,
+      "p_value": 2.418958445625989e-08,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_quantiles",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.9789020977647604,
+      "mean_b": 1.0942974500097653,
+      "p_value": 0.000974544061755939,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_quantiles",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 38.35844742215692,
+      "mean_b": 1.9770842546209402,
+      "p_value": 4.232904614206635e-12,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_quantiles",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 38.35844742215692,
+      "mean_b": 1.0942974500097653,
+      "p_value": 2.4088192543010635e-12,
+      "significant_at_05": true
+    },
+    {
+      "metric": "tail_quantiles",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 1.9770842546209402,
+      "mean_b": 1.0942974500097653,
+      "p_value": 4.159917408179093e-08,
+      "significant_at_05": true
+    },
+    {
+      "metric": "volatility_clustering",
+      "method_a": "sablier_flow",
+      "method_b": "kovae",
+      "mean_a": 0.03707352413886582,
+      "mean_b": 0.0311041233660587,
+      "p_value": 0.010003148558310346,
+      "significant_at_05": true
+    },
+    {
+      "metric": "volatility_clustering",
+      "method_a": "sablier_flow",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.03707352413886582,
+      "mean_b": 0.08001191883276937,
+      "p_value": 4.02381016856624e-07,
+      "significant_at_05": true
+    },
+    {
+      "metric": "volatility_clustering",
+      "method_a": "sablier_flow",
+      "method_b": "timevae",
+      "mean_a": 0.03707352413886582,
+      "mean_b": 0.11460310418761828,
+      "p_value": 0.00034059236847758007,
+      "significant_at_05": true
+    },
+    {
+      "metric": "volatility_clustering",
+      "method_a": "sablier_flow",
+      "method_b": "timegan",
+      "mean_a": 0.03707352413886582,
+      "mean_b": 0.12724735221877242,
+      "p_value": 0.0020360596107187076,
+      "significant_at_05": true
+    },
+    {
+      "metric": "volatility_clustering",
+      "method_a": "kovae",
+      "method_b": "diffusion_ts",
+      "mean_a": 0.0311041233660587,
+      "mean_b": 0.08001191883276937,
+      "p_value": 1.2540995302516012e-06,
+      "significant_at_05": true
+    },
+    {
+      "metric": "volatility_clustering",
+      "method_a": "kovae",
+      "method_b": "timevae",
+      "mean_a": 0.0311041233660587,
+      "mean_b": 0.11460310418761828,
+      "p_value": 0.00012201032868848887,
+      "significant_at_05": true
+    },
+    {
+      "metric": "volatility_clustering",
+      "method_a": "kovae",
+      "method_b": "timegan",
+      "mean_a": 0.0311041233660587,
+      "mean_b": 0.12724735221877242,
+      "p_value": 0.0018112070428941294,
+      "significant_at_05": true
+    },
+    {
+      "metric": "volatility_clustering",
+      "method_a": "diffusion_ts",
+      "method_b": "timevae",
+      "mean_a": 0.08001191883276937,
+      "mean_b": 0.11460310418761828,
+      "p_value": 0.0061821672323747945,
+      "significant_at_05": true
+    },
+    {
+      "metric": "volatility_clustering",
+      "method_a": "diffusion_ts",
+      "method_b": "timegan",
+      "mean_a": 0.08001191883276937,
+      "mean_b": 0.12724735221877242,
+      "p_value": 0.02093821066968667,
+      "significant_at_05": true
+    },
+    {
+      "metric": "volatility_clustering",
+      "method_a": "timevae",
+      "method_b": "timegan",
+      "mean_a": 0.11460310418761828,
+      "mean_b": 0.12724735221877242,
+      "p_value": 0.43675722778107295,
+      "significant_at_05": false
+    }
+  ],
+  "sablier_flow_summary": {
+    "kovae": {
+      "sig": 11,
+      "total": 14,
+      "sf_lower": 11
+    },
+    "diffusion_ts": {
+      "sig": 13,
+      "total": 14,
+      "sf_lower": 14
+    },
+    "timevae": {
+      "sig": 14,
+      "total": 14,
+      "sf_lower": 14
+    },
+    "timegan": {
+      "sig": 13,
+      "total": 14,
+      "sf_lower": 14
+    }
+  },
+  "tstr_bootstrap_ci": [
+    {
+      "method": "sablier_flow",
+      "spearman_point": 0.8504347826086956,
+      "ci_lo": 0.639629573374788,
+      "ci_hi": 0.9388379204892967,
+      "n_iter": 10000
+    },
+    {
+      "method": "kovae",
+      "spearman_point": 0.8599999999999999,
+      "ci_lo": 0.6558377398941498,
+      "ci_hi": 0.9456855015330705,
+      "n_iter": 10000
+    },
+    {
+      "method": "diffusion_ts",
+      "spearman_point": -0.7243478260869565,
+      "ci_lo": -0.8712798671760933,
+      "ci_hi": -0.41354867203340523,
+      "n_iter": 10000
+    },
+    {
+      "method": "timevae",
+      "spearman_point": -0.7878260869565217,
+      "ci_lo": -0.9045544593346541,
+      "ci_hi": -0.5525299351532419,
+      "n_iter": 10000
+    },
+    {
+      "method": "timegan",
+      "spearman_point": 0.5347826086956522,
+      "ci_lo": 0.09137417021107447,
+      "ci_hi": 0.7507679178604516,
+      "n_iter": 10000
+    }
+  ]
+}
